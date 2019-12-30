@@ -1,5 +1,5 @@
 {
-  "name": "crc16",
+  "name": "@kronoslive/crc16",
   "version": "1.0.1",
   "description": "Native node addon to calculate CRC16 values.",
   "main": "index.js",

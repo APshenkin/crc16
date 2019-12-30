@@ -67,7 +67,8 @@ void Main(const FunctionCallbackInfo<Value>& args) {
   Local<Value> ret = v8::Undefined(isolate);
 
   if(args[0]->IsObject()) {
-    Local<Object> bufferObj = args[0]->ToObject();
+    auto context = v8::Isolate::GetCurrent()->GetCurrentContext();
+    Local<Object> bufferObj = args[0]->ToObject(context).ToLocalChecked();
     U8* bufferData = (U8*)Buffer::Data(bufferObj);
     int bufferLength = Buffer::Length(bufferObj);
 
