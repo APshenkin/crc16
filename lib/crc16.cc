@@ -76,13 +76,13 @@ void Main(const FunctionCallbackInfo<Value>& args) {
         ret = Number::New(isolate, GetCrc16(bufferData, bufferLength));
     } else {
         isolate->ThrowException(
-            Exception::TypeError(String::NewFromUtf8(isolate, "Invalid arguments provided. Buffer required."))
+            Exception::TypeError(String::NewFromUtf8(isolate, "Invalid arguments provided. Buffer required.").ToLocalChecked())
         );
         return;
     }
   } else {
     isolate->ThrowException(
-        Exception::TypeError(String::NewFromUtf8(isolate, "Invalid arguments provided. Buffer required."))
+        Exception::TypeError(String::NewFromUtf8(isolate, "Invalid arguments provided. Buffer required.").ToLocalChecked())
     );
     return;
   }
